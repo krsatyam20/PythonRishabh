@@ -1,0 +1,161 @@
+python list
+
+Create 
+	list1 = ['physics', 'chemistry', 1997, 2000];
+	list2 = [1, 2, 3, 4, 5 ];
+	list3 = ["a", "b", "c", "d"]
+	
+Accessing Values in Lists
+	list1 = ['physics', 'chemistry', 1997, 2000]
+	list2 = [1, 2, 3, 4, 5, 6, 7 ]
+	print (list1[0])
+	print (list2[1:5])
+	for x in list1:
+		print(x)
+	
+Updating Lists
+	list = ['physics', 'chemistry', 1997, 2000];
+	print "Value available at index 2 : "
+	print list[2]
+	list[2] = 2001;
+	print "New value available at index 2 : "
+	print list[2]
+	
+Delete List Elements
+	list = ['physics', 'chemistry', 1997, 2000]
+	print ("Value available at index 2 : ")
+	print (list[2])
+	del list[2]
+	print ("New value available at index 2 : ")
+	print (list[2])
+	
+
+Basic List Operations
+
+Python Expression		Results					Description
+len([1, 2, 3])			3						Length
+
+[1, 2, 3] + [4, 5, 6]	[1, 2, 3, 4, 5, 6]		Concatenation
+
+['Hi!'] * 4	    ['Hi!', 'Hi!', 'Hi!', 'Hi!']	Repetition
+
+3 in [1, 2, 3]			True					Membership
+
+for x in [1, 2, 3]: print x,	1 2 3			Iteration
+
+===============
+
+Indexing, Slicing, and Matrixes
+
+Python 				Expression				Results	Description
+L[2]				SPAM!					Offsets start at zero
+L[-2]				Spam					Negative: count from the right
+L[1:]				['Spam', 'SPAM!']		Slicing fetches sections
+
+
+Built-in List Functions & Methods
+
+	1.cmp(list1, list2)
+	Compares elements of both lists.
+		ex:
+			list1, list2 = [123, 'xyz'], [456, 'abc']
+			print cmp(list1, list2)
+			print cmp(list2, list1)
+			list3 = list2 + [786];
+			print cmp(list2, list3)
+
+	2	len(list)
+	Gives the total length of the list.
+		Ex: 
+		list1, list2 = [123, 'xyz', 'zara'], [456, 'abc']
+		print "First list length : ", len(list1)
+		print "Second list length : ", len(list2)
+	
+	3	max(list)
+	Returns item from the list with max value.
+		Ex:
+		list1, list2 = [123, 'xyz', 'zara', 'abc'], [456, 700, 200]
+		print "Max value element : ", max(list1)
+		print "Max value element : ", max(list2)
+
+	4	min(list)
+	Returns item from the list with min value.
+		Ex:
+		list1, list2 = [123, 'xyz', 'zara', 'abc'], [456, 700, 200]
+		print "min value element : ", min(list1)
+		print "min value element : ", min(list2)
+
+	5	list(seq)
+	Converts a tuple into list.
+		Ex:
+		aTuple = (123, 'xyz', 'zara', 'abc');
+		aList = list(aTuple)
+		print "List elements : ", aList	
+
+
+1.	list.append(obj)
+	Appends object obj to list
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc'];
+	aList.append( 2009 );
+	print "Updated List : ", aList
+
+2	list.count(obj)
+	Returns count of how many times obj occurs in list
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc', 123];
+	print "Count for 123 : ", aList.count(123)
+	print "Count for zara : ", aList.count('zara')
+
+3	list.extend(seq)
+	Appends the contents of seq to list
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc', 123];
+	bList = [2009, 'manni'];
+	aList.extend(bList)
+	print "Extended List : ", aList
+	
+4	list.index(obj)
+	Returns the lowest index in list that obj appears
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc'];
+	print "Index for xyz : ", aList.index( 'xyz' ) 
+	print "Index for zara : ", aList.index( 'zara' )
+
+5	list.insert(index, obj)
+	Inserts object obj into list at offset index
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc']
+	aList.insert( 3, 2009)
+	print "Final List : ", aList
+	
+6	list.pop(obj=list[-1])
+	Removes and returns last object or obj from list
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc'];
+	print "A List : ", aList.pop()
+	print "B List : ", aList.pop(2)
+
+7	list.remove(obj)
+	Removes object obj from list
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc', 'xyz'];
+	aList.remove('xyz');
+	print "List : ", aList
+	aList.remove('abc');
+	print "List : ", aList
+
+8	list.reverse()
+	Reverses objects of list in place
+	Ex:
+	aList = [123, 'xyz', 'zara', 'abc', 'xyz'];
+	aList.reverse();
+	print "List : ", aList
+	
+9	list.sort([func])
+	Sorts objects of list, use compare func if given
+	ex:
+	aList = [123, 'xyz', 'zara', 'abc', 'xyz'];
+	aList.reverse();
+	print "List : ", aList
+	
