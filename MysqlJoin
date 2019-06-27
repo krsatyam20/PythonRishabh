@@ -1,0 +1,117 @@
+Sql 
+
+create database 
+create Table 
+inserte data in table 
+select data from table 
+	=> select all data 
+	=> select data column wise 
+	using where clause 
+	
+	
+how to restructur of table 
+
+id name 
+		id name email 
+add any column 
+	alter table <table name> add <columnName> data type(lenth)
+	alter table student add email varchar(55)
+		
+Remove column	
+	alter table <table name> drop <columnName> 
+	alter table student drop email
+	
+modify 
+
+	alter table <table name> alter <columnName> data type(lenth)
+	alter table student alter email  emailId
+	
+	
+Select data from table 
+	all data 
+		select * from tableName 
+	limit data (range 1-10)
+		select * from tableName limit 1,10
+	SPECIFIC DATA
+	select columnName1,columnName2 form tableName
+
+	condition based data
+		
+	select * from tableName where id="1		
+	select * from tableName where name="Kumar"		
+	select * from tableName where Email="K@gmail.com"	
+
+
+=======================================================
+
+CREATE TABLE `teacher` (
+  `id` int(11) NOT NULL,
+  `name` varchar(55) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `email` varchar(55) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `teacher` (`id`, `name`, `age`, `email`) VALUES
+(1001, 'ram', NULL, NULL),
+(1002, 'shaam', NULL, NULL),
+(1003, 'monu', NULL, NULL),
+(1004, 'aa', NULL, NULL),
+(1005, NULL, 5, NULL),
+(1006, NULL, 6, NULL),
+(1007, NULL, 8, NULL),
+(1008, NULL, 6, NULL);
+
+CREATE TABLE `teacher_address` (
+  `id` int(11) NOT NULL,
+  `teacher_id` int(11) DEFAULT NULL,
+  `address` varchar(55) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `teacher_address` (`id`, `teacher_id`, `address`) VALUES
+(1, 1, 'delhi'),
+(2, 1, 'up'),
+(3, 1, 'noida'),
+(4, 1001, 'delhi'),
+(5, 1001, 'up'),
+(6, 1001, 'noida');
+
+ALTER TABLE `teacher`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `teacher_address`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `teacher`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
+
+ALTER TABLE `teacher_address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+
+show databases;
+
+use school;
+
+show tables;
+
+select * from teacher;
+select id, name from teacher;
+
+select * from teacher where id = 1001;
+/*  limit data  */ 
+select * from teacher limit 0,1;
+/* join  */
+
+select * from teacher_address;
+select teacher.id,teacher.name,teacher_address.address  from  teacher  inner join  teacher_address on teacher_address.teacher_id= teacher.id; 
+/* alias name of table */
+select t.id as teacher_id,t.name as teacher_name,tad.address as teacher_address  from  teacher as t  inner join  teacher_address as tad on tad.teacher_id= t.id;
+
+/* Limit In Join */
+select t.id as teacher_id,t.name as teacher_name,tad.address as teacher_address  from  teacher as t  inner join  teacher_address as tad on tad.teacher_id= t.id  order by tad.address desc limit 1,2;
+ 
+
+	
+	
+	
