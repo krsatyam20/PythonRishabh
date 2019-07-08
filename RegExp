@@ -1,0 +1,60 @@
+RegEx Module
+	A RegEx, or Regular Expression, is a sequence of characters that forms a search pattern
+
+re: is a Module 
+	
+import re
+
+findall	  Returns a list containing all matches
+search	  Returns a Match object if there is a match anywhere in the string
+split	  Returns a list where the string has been split at each match
+sub	      Replaces one or many matches with a string	
+
+
+Rules
+
+Character		Description					Example	
+[]				A set of characters			"[a-m]"	
+\				Signals a special 
+				sequence (can also be 
+				used to escape special 
+				characters)					"\d"	
+.				Any character (except 
+				newline character)			"he..o"	
+
+^				Starts with					"^hello"	
+$				Ends with					"world$"	
+*				Zero or more occurrences	"aix*"	
++				One or more occurrences		"aix+"	
+{}				Exactly the specified 
+				number of occurrences		"al{2}"	
+|				Either or					"yes|No"	
+()				Capture and group
+
+
+findall() 
+	Example
+
+	str = "The rain in Spain"
+	x = re.findall("ai", str)
+	print(x)
+
+search()
+	Search the string to see if it starts with "The" and ends with "Spain":
+	txt = "The rain in Spain"
+	x = re.search("^The.*Spain$", txt)
+	
+	
+split() 
+	Example
+	str = "The rain in Spain"
+	x = re.split("\s", str)
+	print(x)
+	
+Sub
+		Example
+		#Replace all white-space characters with the digit "9":
+
+		str = "The rain in Spain"
+		x = re.sub("\s", "9", str)
+		print(x)
