@@ -1,0 +1,93 @@
+from tkinter import *
+
+#creating the application main window.   
+top = Tk()  
+#Entering the event main loop  
+top.mainloop()  
+
+
+
+1   Button	 
+2	Canvas	
+3	Checkbutton	
+4	Entry	:display the single-line text field 
+
+5	Frame	:as a container to which,another widget can be added and organized.
+
+6	Label	:display some message or information about the widgets.
+
+7	ListBox	:A list of options.
+
+8	Menubutton	:Display the menu items.
+
+9	Menu	:It is used to add menu items to the user.
+
+10	Message	:Display the message-box.
+
+11	Radiobutton	:A checkbutton with various options and the user can select 
+				 only one option among them.
+
+12	Scale	:Provide the slider.
+
+13	Scrollbar :We can scroll the window up and down.
+
+14	Text	:It is just like Entry but some different from Entry because it 
+			  provides a multi-line text field.
+
+15	Toplevel :A create a separate window container.
+
+16	Spinbox	:A select from options of values.
+
+17	PanedWindow	:That contains horizontal or vertical panes.
+
+18	LabelFrame	:A LabelFrame is a container widget that acts as the container
+
+19	MessageBox	:Display the message-box in the desktop based applications.
+
+Tkinter Geometry
+	Using the Tkinter geometry we can define the widgets position.
+	
+The pack() method
+The grid() method
+The place() method
+
+
+Pack(): organize widget in the block
+syntax
+widget.pack(options)
+
+Ex: 
+btn=Button(tk, text = "Red", fg = "red")  
+btn.pack( side = LEFT) # RIGHT  TOP BOTTOM  
+
+
+The grid(): organizes the widgets in the tabular form(rows and columns
+Syntax
+widget.grid(options)  
+
+Column :The column number in which the widget is to be placed. column is
+		represented by 0.
+
+Columnspan :The width of the widget. It represents the number of columns.
+
+ipadx, ipady :It represents the number of pixels to pad the widget inside 
+			  the widget's border.
+padx, pady :It represents the number of pixels to pad the widget outside the 
+			widget's border.
+row :The row number in which the widget is to be placed. The topmost row is 
+	 represented by 0.
+rowspan : The height of the widget, i.e. the number of the row up to which 
+		  the widget is expanded.
+Sticky :If the cell is larger than a widget, then sticky is used to specify 
+		the position of the widget inside the cell.
+		
+Ex:
+from tkinter import *  
+parent = Tk()  
+name = Label(parent,text = "Name").grid(row = 0, column = 0)  
+e1 = Entry(parent).grid(row = 0, column = 1)  
+password = Label(parent,text = "Password").grid(row = 1, column = 0)  
+e2 = Entry(parent).grid(row = 1, column = 1)  
+submit = Button(parent, text = "Submit").grid(row = 4, column = 0)  
+parent.mainloop()  
+		
